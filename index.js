@@ -209,7 +209,7 @@ var manav = [...meyveler.concat(sebzeler)];
  */
 
 function emojileriDonustur(strMessage,objEmojiler) {
- const words = strMessage.split(" ")
+ /*const words = strMessage.split(" ")
  for(let i in words){
   const word = words[i];
   if(objEmojiler[word.toLowerCase()]){
@@ -217,7 +217,14 @@ function emojileriDonustur(strMessage,objEmojiler) {
   }
  }
  return words.join(" ")
+ */
+  for(let key in objEmojiler){
+    strMessage = strMessage.replaceAll(key,objEmojiler[key])
+    strMessage = strMessage.replaceAll(key.toUpperCase(),objEmojiler[key])
+  }
+  return strMessage
 }
+console.log(emojileriDonustur(":) Merhaabaa :D :p :O :() ",emojiler))
 //console.log(emojileriDonustur(":) Bu bir :( deneme mesajıdır :d",emojiler))
 
 /*  Bu satırın aşağısındaki kodları lütfen değiştirmeyin  */
